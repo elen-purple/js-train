@@ -14,4 +14,19 @@
 // import "./js/callbacks.js";
 // import "./js/arrow-functions.js";
 // import "./js/object.js";
-import "./js/object-voids.js";
+// import "./js/object-voids.js";
+// import "./js/spread.js";
+// import "./js/destructuring.js";
+import "./js/iterative-methods.js";
+// import "./js/tasks.js";
+// import "./js/my-tasks.js";
+
+//   //  /\
+//   \\ /||\
+//   ||/||||\
+//   |/|/--\|\
+//   /||\__/||\
+//  /||||||||||\
+//  |  _    _  |
+//  | | |  |_| |
+//  |_|_|______|
