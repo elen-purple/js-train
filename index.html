@@ -4,8 +4,119 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS-Train</title>
+    <link rel="stylesheet" href="./css/dom.css" />
+    <link rel="stylesheet" href="./css/event.css" />
+    <link rel="stylesheet" href="./css/mouse-events.css" />
   </head>
   <body>
+    <form class="form">
+      <label class="form-label">
+        Login
+        <br />
+        <input
+          type="login"
+          name="userLogin"
+          required
+          class="form-login"
+          placeholder="Enter your login"
+        />
+      </label>
+      <br />
+      <label class="form-label">
+        Email
+        <br />
+        <input
+          type="email"
+          name="userEmail"
+          required
+          class="form-email"
+          placeholder="Enter your email"
+        />
+      </label>
+      <br />
+      <label class="form-label">
+        Password
+        <br />
+        <input
+          type="password"
+          name="userPassword"
+          required
+          class="form-password"
+          placeholder="Enter your password"
+        />
+      </label>
+      <br />
+      <button type="submit" class="form-btn">Press to send</button>
+    </form>
+    <input id="radio-input" type="radio" />
+    <br />
+    <br />
+    <input
+      type="text"
+      placeholder="Enter your favorite film"
+      data-name="film"
+    />
+    <input
+      type="text"
+      placeholder="Enter your favorite book"
+      data-name="book"
+    />
+    <button id="alert-button">Press me</button>
+    <br />
+    <div id="color-box"></div>
+    <button class="js-clear">Очистити</button>
+    <p class="output js-output"></p>
+
+    <div id="box"></div>
+    <div class="block"></div>
+    <!-- <form>
+      <input type="text" data-text placeholder="Enter some text" required />
+      <button data-action="submit">Send</button>
+    </form> -->
+    <!-- <div class="box"><a href="" class="link">Link</a></div> -->
+    <!-- <div id="box" class="box">
+      <img src="" alt="" class="img" />
+      <ul class="list">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+      </ul>
+      <a
+        class="link"
+        target="_blank"
+        href="https://www.nationalgeographic.com/animals/mammals/facts/domestic-cat"
+      >
+        There are more cats
+      </a>
+      <p class="text"></p>
+    </div> -->
+    <!-- <ul class="site-nav">
+      <li class="site-nav__item">
+        <a href="">Про нас</a>
+      </li>
+      <li class="site-nav__item">
+        <a href="https://">Портфоліо</a>
+      </li>
+      <li class="site-nav__item">
+        <a href="">Контакти</a>
+      </li>
+    </ul> -->
+    <!-- <h1></h1>
+    <a name="list">список</a>
+    <ul>
+      <li><a href="http://google.com">http://google.com</a></li>
+      <li><a href="/tutorial">/tutorial.html</a></li>
+      <li><a href="local/path">local/path</a></li>
+      <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+      <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+      <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul> -->
+    <!-- <h1 class="title">Title</h1>
+    <article class="article">
+      <h2 class="subtitle"></h2>
+      <p class="text"></p>
+      <button></button>
+    </article> -->
     <script src="./index.js" type="module"></script>
   </body>
 </html>

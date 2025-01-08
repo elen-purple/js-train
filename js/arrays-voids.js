@@ -65,7 +65,7 @@
 const friends = ["Mary", "Lika", "Vika", "Lilia"];
 // console.log(friends);
 // const bestFriends = friends.splice(0, 2);
-// Видалення
+//* Видалення
 // "Mary", "Lika", "Vika", "Lilia"
 // "Vika", "Lilia"
 // "Mary", "Lika"

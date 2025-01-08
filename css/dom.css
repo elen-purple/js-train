@@ -1,0 +1,30 @@
+/* :root {
+  --bg: #fcfbe7;
+  --accent: #ffaab9;
+  --title: #341100;
+  --text: #a66f3e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.article {
+  background-color: var(--bg);
+  max-width: 400px;
+}
+
+.article-title {
+  color: var(--title);
+}
+
+.article-desc {
+  color: var(--text);
+}
+
+.article-button {
+  background-color: var(--accent);
+  border: 0px;
+  color: var(--title);
+} */

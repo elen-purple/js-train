@@ -103,3 +103,163 @@ const videoPlayers = [
 const countGeneralTimePlayed = (players) =>
   players.reduce((acc, player) => acc + player.timePlayed, 0);
 console.log(countGeneralTimePlayed(videoPlayers));
+
+// Порахувати загальну кількість товарів в кошику
+const cart = [
+  { label: "Apples", price: 100, quantity: 2 },
+  { label: "Bananas", price: 120, quantity: 3 },
+  { label: "Lemons", price: 70, quantity: 4 },
+];
+
+const totalAmount = (cart) =>
+  cart.reduce((acc, product) => acc + product.quantity, 0);
+console.log(totalAmount(cart));
+
+const totalPrice = (cart) =>
+  cart.reduce((acc, product) => acc + product.price * product.quantity, 0);
+console.log(totalPrice(cart));
+
+//Зробити статистику всіх тегів. Назву тега потрібно зробити ключем,
+//значення якого буде кількістьповторень тегів в масиві.Якщо властивість
+//з ключем tag є, збільшуємо його значення на 1 якщо властивості немає с
+//таким ключем що в tag, створити і записати 1
+
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+// const makeStatisticsOfTags = (tweets) => {
+//   // const allTags = tweets.reduce((acc, tweet) => {
+//   //   acc += tweet.tags.map((tag) => tag);
+//   //   console.log(acc);
+//   //   console.log(tweet.tags.map((tag) => tag));
+//   // }, "");
+//   const allTags = [];
+//   const statisticsOfTags = {};
+//   for (const tweet of tweets) {
+//     const { tags } = tweet;
+//     for (const tag of tags) {
+//       allTags.push(tag);
+//     }
+//   }
+//   console.log(allTags);
+//   for (let i = 0; allTags.length !== 0; i += 1) {
+//     const firstTag = allTags[0];
+//     let count = 0;
+//     for (let s = 0; s < allTags.length; s += 1) {
+//       if (firstTag === allTags[s]) {
+//         // console.log(s);
+//         // console.log(allTags);
+//         console.log(allTags[s]);
+//         // console.log(allTags.length);
+//         console.log(firstTag);
+//         allTags.splice(s, 1);
+//         count += 1;
+//       }
+//     }
+//     console.log(allTags.length);
+//     // console.log(allTags);
+//     if (statisticsOfTags.includes(firstTag)) {
+//       statisticsOfTags[firstTag] += 1;
+//     } else {
+//       statisticsOfTags[firstTag] = count;
+//     }
+//   }
+//   console.log(statisticsOfTags);
+// };
+// console.log(makeStatisticsOfTags(tweets));
+
+const makeStatisticOfTags = tweets.reduce((statistic, tweet) => {
+  const allTags = Object.keys(statistic);
+  tweet.tags.forEach((tag) => {
+    if (allTags.includes(tag)) {
+      statistic[tag] += 1;
+    } else {
+      statistic[tag] = 1;
+    }
+  });
+  return statistic;
+}, {});
+console.log(makeStatisticOfTags);
+
+const nums = [0, 5, -3, 10, 0, 7, -1];
+const message =
+  "У масиві є такі числа: " +
+  [...nums]
+    .sort((a, b) => a - b)
+    .reduce((message, number) => (message += number + ", "), "");
+console.log(message);
+
+//* Метод sort сортує елементи по зростанню від меншого до більшого або по алфавіту
+//! Цей метод змінює оригінальний масив
+//* Щоб не змінювати данні оригінального масиву, зробіть перед сортуванням копію, в якій і посортуємо елементи
+
+const userNames = [
+  "Anna",
+  "Mary",
+  "Vicktor",
+  "Nikita",
+  "George",
+  "Kiril",
+  "Jastin",
+  "Katie",
+];
+const sortedNames = [...userNames].sort((a, b) => a.localeCompare(b));
+const revertSortedNames = [...userNames].sort((a, b) => b.localeCompare(a));
+console.log(sortedNames);
+console.log(revertSortedNames);
+
+//Відсортуйте масив об'єктів за зростанням значення властивості
+//date в форматі dd / mm / yyyy.
+const events = [
+  { name: "Event 1", date: "10/02/2023" },
+  { name: "Event 2", date: "15/03/2023" },
+  { name: "Event 3", date: "01/01/2023" },
+  { name: "Event 4", date: "01/02/2023" },
+];
+
+events.sort((a, b) => {
+  const dateA = new Date(a.date.split("/").reverse().join("-"));
+  const dateB = new Date(b.date.split("/").reverse().join("-"));
+  // console.log(dateA);
+  return dateA - dateB;
+});
+
+// events.sort(
+//   (a, b) =>
+//     new Date(a.date.split("/").reverse().join("-")) -
+//     new Date(b.date.split("/").reverse().join("-"))
+// );
+console.log(events);
+
+// Відсортуйте масив об'єктів за спаданням значення властивості
+//popularity, а при однаковому значенні popularity - за алфавітом
+//значення властивості name.
+const items = [
+  { name: "Item B", popularity: 5 },
+  { name: "Item A", popularity: 5 },
+  { name: "Item C", popularity: 2 },
+  { name: "Item D", popularity: 3 },
+];
+
+items.sort((a, b) => {
+  if (a.popularity === b.popularity) {
+    return a.name.localeCompare(b.name);
+  } else {
+    return b.popularity - a.popularity;
+  }
+});
+console.log(items);
+
+//Відсортувати масив об'єктів за алфавітом в полі name:
+const arr = [
+  { name: "John", age: 32 },
+  { name: "Jane", age: 26 },
+  { name: "Mike", age: 42 },
+  { name: "Emily", age: 29 },
+];
+arr.sort((a, b) => a.name.localeCompare(b.name));
+console.log(arr);
